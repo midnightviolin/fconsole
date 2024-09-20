@@ -532,7 +532,7 @@ class _SystemInfoPannelState extends State<SystemInfoPannel> {
       } else if (Platform.isIOS) {
         _deviceData = _readIosDeviceInfo(await deviceInfoPlugin.iosInfo);
       } else if (Platform.isOhos) {
-        _deviceData = _readOhosDeviceInfo(await deviceInfoPlugin.iosInfo);
+        _deviceData = _readOhosDeviceInfo(await deviceInfoPlugin.ohosInfo);
       }
     } on PlatformException {
       _deviceData = <String, dynamic>{
