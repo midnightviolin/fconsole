@@ -600,11 +600,11 @@ class _SystemInfoPannelState extends State<SystemInfoPannel> {
 
    Map<String, dynamic> _readOhosDeviceInfo(OhosDeviceInfo data) {
     return <String, dynamic>{
-      'SystemName': data.osFullName,
+      'SdkVersion': data.osFullName,
       'SystemVersion': data.displayVersion,
       'Model': data.productModel,
       //'LocalizedModel': data.localizedModel,
-      'IdentifierForVendor': data.udid,
+      'IdentifierForVendor': data.odID,
       'isPhysicalDevice': data.deviceType,
 //      'utsname.sysname:': data.utsname.sysname,
 //      'utsname.nodename:': data.utsname.nodename,
