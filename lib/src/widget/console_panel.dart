@@ -598,20 +598,19 @@ class _SystemInfoPannelState extends State<SystemInfoPannel> {
     };
   }
 
-   Map<String, dynamic> _readOhosDeviceInfo(IosDeviceInfo data) {
+   Map<String, dynamic> _readOhosDeviceInfo(OhosDeviceInfo data) {
     return <String, dynamic>{
-      'Name': data.name,
-      'SystemName': data.systemName,
-      'SystemVersion': data.systemVersion,
-      'Model': data.model,
+      'SystemName': data.osFullName,
+      'SystemVersion': data.displayVersion,
+      'Model': data.productModel,
       //'LocalizedModel': data.localizedModel,
-      'IdentifierForVendor': data.identifierForVendor,
-      'isPhysicalDevice': data.isPhysicalDevice,
+      'IdentifierForVendor': data.udid,
+      'isPhysicalDevice': data.,
 //      'utsname.sysname:': data.utsname.sysname,
 //      'utsname.nodename:': data.utsname.nodename,
 //      'utsname.release:': data.utsname.release,
 //      'utsname.version:': data.utsname.version,
-      'utsname.machine:': data.utsname.machine,
+      'utsname.machine:': data.manufacture,
     };
   }
 
