@@ -531,6 +531,8 @@ class _SystemInfoPannelState extends State<SystemInfoPannel> {
         _deviceData = _readAndroidBuildData(await deviceInfoPlugin.androidInfo);
       } else if (Platform.isIOS) {
         _deviceData = _readIosDeviceInfo(await deviceInfoPlugin.iosInfo);
+      } else if (Platform.isOhos) {
+        _deviceData = _readOhosDeviceInfo(await deviceInfoPlugin.iosInfo);
       }
     } on PlatformException {
       _deviceData = <String, dynamic>{
@@ -541,6 +543,8 @@ class _SystemInfoPannelState extends State<SystemInfoPannel> {
       setState(() {});
     }
   }
+
+
 
   Map<String, dynamic> _readAndroidBuildData(AndroidDeviceInfo build) {
     return <String, dynamic>{
@@ -570,12 +574,31 @@ class _SystemInfoPannelState extends State<SystemInfoPannel> {
       // 'tags': build.tags,
       // 'type': build.type,
       'isPhysicalDevice': build.isPhysicalDevice,
-      'AndroidId': '',
+      'AndroidId': build.androidId,
       // 'systemFeatures': build.systemFeatures,
     };
   }
 
+  
+
   Map<String, dynamic> _readIosDeviceInfo(IosDeviceInfo data) {
+    return <String, dynamic>{
+      'Name': data.name,
+      'SystemName': data.systemName,
+      'SystemVersion': data.systemVersion,
+      'Model': data.model,
+      //'LocalizedModel': data.localizedModel,
+      'IdentifierForVendor': data.identifierForVendor,
+      'isPhysicalDevice': data.isPhysicalDevice,
+//      'utsname.sysname:': data.utsname.sysname,
+//      'utsname.nodename:': data.utsname.nodename,
+//      'utsname.release:': data.utsname.release,
+//      'utsname.version:': data.utsname.version,
+      'utsname.machine:': data.utsname.machine,
+    };
+  }
+
+   Map<String, dynamic> _readOhosDeviceInfo(IosDeviceInfo data) {
     return <String, dynamic>{
       'Name': data.name,
       'SystemName': data.systemName,
