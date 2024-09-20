@@ -605,7 +605,7 @@ class _SystemInfoPannelState extends State<SystemInfoPannel> {
       'Model': data.productModel,
       //'LocalizedModel': data.localizedModel,
       'IdentifierForVendor': data.udid,
-      'isPhysicalDevice': data.,
+      'isPhysicalDevice': data.deviceType,
 //      'utsname.sysname:': data.utsname.sysname,
 //      'utsname.nodename:': data.utsname.nodename,
 //      'utsname.release:': data.utsname.release,
