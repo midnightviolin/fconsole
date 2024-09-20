@@ -574,7 +574,7 @@ class _SystemInfoPannelState extends State<SystemInfoPannel> {
       // 'tags': build.tags,
       // 'type': build.type,
       'isPhysicalDevice': build.isPhysicalDevice,
-      'AndroidId': build.androidId,
+      // 'AndroidId': build.androidId,
       // 'systemFeatures': build.systemFeatures,
     };
   }
